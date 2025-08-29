@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurture International Fun Skool (Recog.) - Since 2008</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/nurture logo.png" alt="NIFS Logo" class="logo-image">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#admissions" class="nav-link">Admissions</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="bg-image"></div>
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">
+                        <span style="color:#28ACB5;">Nurture</span>
+                        <span style="color:#D04180;">International</span>
+                    </span>
+                    <span class="title-line">
+                        <span style="color:#975992;">fun-</span>
+                        <span style="color:#DDC81F;">Skool</span>
+                    </span>
+                    <span class="title-small">(Recog.)</span>
+                </h1>
+
+                <p class="hero-subtitle">Nurturing Future Leaders</p>
+                <div class="hero-buttons">
+                    <a href="https://app.ikriyo.com/Link/Nurture-International-Fun-Skool_Thane@AUsenhhHjNstpriDn7OYfIvYBjsVt7OTegfAgra%2BXYc%3D" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-graduation-cap"></i>
+                        Enroll Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/8613313/pexels-photo-8613313.jpeg"
+                        alt="Happy children learning">
+                    <div class="image-overlay">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="about-tab">About Us</button>
+                        <button class="tab-btn" data-tab="benefits-tab">What Your Child Gets</button>
+                        <button class="tab-btn" data-tab="parents-tab">Why Parents Love Us</button>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="about-tab">
+                            <h3>Welcome to Our Learning Family</h3>
+                            <p>At Nurture International Fun Skool, we believe every child is unique and deserves
+                                personalized attention to unlock their full potential. Since 2008, we've been committed
+                                to creating a nurturing environment where children develop academically, socially, and
+                                emotionally through play-based learning and innovative teaching methodologies.</p>
+                            <p>Our experienced educators use international curriculum standards combined with local
+                                cultural values to prepare your child for future academic success while maintaining
+                                their natural curiosity and joy for learning.</p>
+                        </div>
+                        <div class="tab-pane" id="benefits-tab">
+                            <h3>Comprehensive Development Program</h3>
+                            <ul class="benefits-list">
+                                <li><i class="fas fa-globe"></i> International Curriculum Standards</li>
+                                <li><i class="fas fa-heart"></i> Holistic Development Approach</li>
+                                <li><i class="fas fa-desktop"></i> Smart Classroom Technology</li>
+                                <li><i class="fas fa-om"></i> Yoga & Dance Programs</li>
+                                <li><i class="fas fa-award"></i> 28+ Years of Excellence</li>
+                                <li><i class="fas fa-users"></i> Small Class Sizes</li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="parents-tab">
+                            <h3>Why Families Choose Us</h3>
+                            <ul class="benefits-list">
+                                <li><i class="fas fa-mobile-alt"></i> Daily App Updates & Communication</li>
+                                <li><i class="fas fa-comments"></i> Open Door Communication Policy</li>
+                                <li><i class="fas fa-chalkboard-teacher"></i> Qualified & Caring Teachers</li>
+                                <li><i class="fas fa-shield-alt"></i> Hygienic & Safe Campus</li>
+                                <li><i class="fas fa-fire-extinguisher"></i> Complete Fire Safety Systems</li>
+                                <li><i class="fas fa-video"></i> CCTV Monitored Premises</li>
+                                <li><i class="fas fa-dollar-sign"></i> Affordable Fee Structure</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Get the tab id to show
+                    const tabId = this.getAttribute('data-tab');
+
+                    // Hide all tab panes
+                    document.querySelectorAll('.tab-pane').forEach(pane => {
+                        pane.classList.remove('active');
+                    });
+
+                    // Show the selected tab pane
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+
+    <!-- Admissions Section -->
+    <section id="admissions" class="admissions">
+        <div class="admissions-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2>Admissions Open – 2025–26</h2>
+                <p>Secure your child's bright future with our comprehensive early childhood programs</p>
+            </div>
+
+            <!-- Cards Wrapper -->
+            <div class="admission-cards two-per-row">
+                <!-- Play Group -->
+                <div class="admission-card card-playgroup" style="color:#28ACB5;border-color:#28ACB5;">
+                    <div class="card-header">
+                        <h3 style="color:#28ACB5;">Play Group</h3>
+                        <div class="age-badge" style="background-color:#28ACB5;color:#fff;">20 Months - 3 Years</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="detail">
+                            <i class="fas fa-calendar" style="color:#28ACB5;"></i>
+                            <span>Born Between: 1 April 2022 – 31 March 2023</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-clock" style="color:#28ACB5;"></i>
+                            <span>Timings: 11:30 AM to 2:00 PM</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-hourglass-half" style="color:#28ACB5;"></i>
+                            <span>Duration: 2.5 Hours a Day</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-calendar-week" style="color:#28ACB5;"></i>
+                            <span>5 Days a Week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nursery -->
+                <div class="admission-card card-nursery" style="color:#D04180;border-color:#D04180;">
+                    <div class="card-header">
+                        <h3 style="color:#D04180;">Nursery</h3>
+                        <div class="age-badge" style="background-color:#D04180;color:#fff;">3 to 4 Years</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="detail">
+                            <i class="fas fa-calendar" style="color:#D04180;"></i>
+                            <span>Born Between: 1 April 2021 – 31 March 2022</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-clock" style="color:#D04180;"></i>
+                            <span>Timings: 9:00 AM to 11:30 AM & 11:30 AM to 2:00 PM</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-hourglass-half" style="color:#D04180;"></i>
+                            <span>Duration: 2.5 Hours a Day</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-calendar-week" style="color:#D04180;"></i>
+                            <span>5 Days a Week</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Junior KG -->
+                <div class="admission-card card-junior" style="color:#975992;border-color:#975992;">
+                    <div class="card-header">
+                        <h3 style="color:#975992;">Junior KG</h3>
+                        <div class="age-badge" style="background-color:#975992;color:#fff;">4 to 5 Years</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="detail">
+                            <i class="fas fa-calendar" style="color:#975992;"></i>
+                            <span>Born Between: 1 April 2020 – 31 March 2021</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-clock" style="color:#975992;"></i>
+                            <span>Timings: 9:00 AM to 11:30 AM</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-hourglass-half" style="color:#975992;"></i>
+                            <span>Duration: 2.5 Hours a Day</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-calendar-week" style="color:#975992;"></i>
+                            <span>5 Days a Week</span>
+                        </div>
+                    </div>
+                </div>
+
+<!-- Senior KG -->
+<div class="admission-card card-senior" style="color:#DDC81F;border-color:#DDC81F;">
+    <div class="card-header">
+        <h3 style="color:#DDC81F;">Senior KG</h3>
+        <div class="age-badge" style="background-color:#DDC81F;color:#000;">5 Years & Above</div>
+    </div>
+    <div class="card-content">
+        <div class="detail">
+            <i class="fas fa-calendar" style="color:#DDC81F;"></i>
+            <span>Born Between: 1 April 2019 – 31 March 2020</span>
+        </div>
+        <div class="detail">
+            <i class="fas fa-clock" style="color:#DDC81F;"></i>
+            <span>Timings: 11:30 AM to 2:00 PM</span>
+        </div>
+        <div class="detail">
+            <i class="fas fa-hourglass-half" style="color:#DDC81F;"></i>
+            <span>Duration: 2.5 Hours a Day</span>
+        </div>
+        <div class="detail">
+            <i class="fas fa-calendar-week" style="color:#DDC81F;"></i>
+            <span>5 Days a Week</span>
+        </div>
+    </div>
+</div>
+
+            <!-- CTA -->
+            <div class="admission-cta">
+                <a href="https://app.ikriyo.com/Link/Nurture-International-Fun-Skool_Thane@AUsenhhHjNstpriDn7OYfIvYBjsVt7OTegfAgra%2BXYc%3D" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-download"></i>
+                    Download Admission Form
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Learning Adventures</h2>
+                <p>Discover the joy of learning through our diverse programs and activities</p>
+            </div>
+            <div class="gallery-tabs">
+                <button class="gallery-tab active" data-gallery="hobby">Hobby Training</button>
+                <button class="gallery-tab" data-gallery="exposure">Real World Exposure</button>
+                <button class="gallery-tab" data-gallery="facilities">Facilities for Kids</button>
+            </div>
+            <div class="gallery-content">
+                <div class="gallery-grid active" id="hobby">
+                    <div class="gallery-item">
+                        <img src="/gallery/hobby1.png" alt="Art & Craft">
+                        <div class="gallery-overlay">
+                            <h4>Art & Craft</h4>
+                            <p>Creative expression through colors and imagination</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/hobby2.png" alt="Music & Dance">
+                        <div class="gallery-overlay">
+                            <h4>Music & Dance</h4>
+                            <p>Rhythm and movement for joyful learning</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/hobby3.png" alt="Yoga & Exercise">
+                        <div class="gallery-overlay">
+                            <h4>Yoga & Exercise</h4>
+                            <p>Physical wellness and mindfulness practices</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/hobby4.png" alt="Fun Learning">
+                        <div class="gallery-overlay">
+                            <h4>Fun Learning</h4>
+                            <p>Educational games and interactive activities</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/hobby5.png" alt="Storytelling">
+                        <div class="gallery-overlay">
+                            <h4>Storytelling & Role Play</h4>
+                            <p>Imagination and communication skills development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-grid" id="exposure">
+                    <div class="gallery-item">
+                        <img src="/gallery/outdoor1.png" alt="Field Trip Police Station">
+                        <div class="gallery-overlay">
+                            <h4>Field Trip - Police Station</h4>
+                            <p>Community helpers and safety awareness</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/outdoor2.png" alt="Field Trip Market">
+                        <div class="gallery-overlay">
+                            <h4>Field Trip - Market</h4>
+                            <p>Real world shopping and social skills</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/outdoor3.png" alt="Fire Station Visit">
+                        <div class="gallery-overlay">
+                            <h4>Field Trip - Fire Station</h4>
+                            <p>Safety awareness and emergency services</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/outdoor4.png" alt="Health Checkup">
+                        <div class="gallery-overlay">
+                            <h4>Health Check-Up</h4>
+                            <p>Healthcare awareness and wellness programs</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/outdoor5.png" alt="School Picnic">
+                        <div class="gallery-overlay">
+                            <h4>School Picnic</h4>
+                            <p>Outdoor learning and social bonding</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/outdoor6.png" alt="Cultural Programs">
+                        <div class="gallery-overlay">
+                            <h4>Cultural Programs</h4>
+                            <p>Festivals and traditional celebrations</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-grid" id="facilities">
+                    <div class="gallery-item">
+                        <img src="/gallery/facilities1.png" alt="Air Conditioned Classes">
+                        <div class="gallery-overlay">
+                            <h4>Air Conditioned Classes</h4>
+                            <p>Comfortable learning environment</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/facilities2.png" alt="Indoor Play">
+                        <div class="gallery-overlay">
+                            <h4>Indoor Play Area</h4>
+                            <p>Safe and engaging play zones</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/facilities3.png" alt="Outdoor Play">
+                        <div class="gallery-overlay">
+                            <h4>Outdoor Play Area</h4>
+                            <p>Fresh air activities and physical development</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/facilities4.png" alt="Smart Classes">
+                        <div class="gallery-overlay">
+                            <h4>Smart Classroom</h4>
+                            <p>Technology-enhanced learning experiences</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/gallery/facilities5.png" alt="Activity Rooms">
+                        <div class="gallery-overlay">
+                            <h4>Activity Rooms</h4>
+                            <p>Specialized spaces for diverse learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Happy Parents Say</h2>
+                <p>Real experiences from our wonderful school community</p>
+            </div>
+            <div class="testimonial-carousel">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"NIFS has been incredible for my daughter's development. The teachers are so caring and the daily updates help me stay connected with her progress. She loves going to school every day!"</p>
+                        <div class="parent-info">
+                            <img src="https://images.pexels.com/photos/8613313/pexels-photo-8613313.jpeg" alt="Parent">
+                            <div>
+                                <h5>Priya Sharma</h5>
+                                <span>Parent of Aadhya (Nursery)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The holistic approach at NIFS is amazing. My son has grown so much in confidence and creativity. The yoga and dance programs have made him more disciplined and joyful."</p>
+                        <div class="parent-info">
+                            <img src="https://images.pexels.com/photos/8613270/pexels-photo-8613270.jpeg" alt="Parent">
+                            <div>
+                                <h5>Rajesh Kumar</h5>
+                                <span>Parent of Arjun (Junior KG)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Safety and hygiene are top priorities here. The CCTV monitoring gives us peace of mind, and the teachers truly care about each child's individual needs and growth."</p>
+                        <div class="parent-info">
+                            <img src="https://images.pexels.com/photos/8613146/pexels-photo-8613146.jpeg" alt="Parent">
+                            <div>
+                                <h5>Sneha Patel</h5>
+                                <span>Parent of Diya (Senior KG)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>We'd love to welcome your family to our learning community</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>Nurture International Fun Skool<br>Bhayander East, Mumbai</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>9768-619-804</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>nifsbhayander@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.222715620261!2d72.85154177419058!3d19.316139644391875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7afd4ff183a35%3A0x11e9225a3cb60c76!2sNurture%20International%20Fun-Skool%20%7C%20Best%20Preschool%20in%20Bhayandar%20East!5e0!3m2!1sen!2sin!4v1755949013834!5m2!1sen!2sin"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <a href="https://app.ikriyo.com/Link/Nurture-International-Fun-Skool_Thane@AUsenhhHjNstpriDn7OYfIvYBjsVt7OTegfAgra%2BXYc%3D" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-phone"></i>
+                        Call Now to Enroll
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/nuture logo.webp" alt="Nurture International Fun Skool" class="logo-img">
+                    </div>
+                    <p>Building Future-Ready Learners Through Play, Love & Purpose since 2008</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-child"></i> Play Group</a></li>
+                        <li><a href="#"><i class="fas fa-paint-brush"></i> Nursery</a></li>
+                        <li><a href="#"><i class="fas fa-book-open"></i> Junior KG</a></li>
+                        <li><a href="#"><i class="fas fa-graduation-cap"></i> Senior KG</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <span>9768-619-804</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>nifsbhayander@gmail.com</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bhayander East, Mumbai</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nurture International Fun Skool. All rights reserved.</p>
+                <p class="design-credit">Design by: <span>Starz Ventures</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
