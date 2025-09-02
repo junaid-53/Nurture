@@ -37,12 +37,6 @@
     <section id="home" class="hero">
         <div class="hero-bg">
             <div class="bg-image"></div>
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
-            <div class="cloud cloud-1"></div>
-            <div class="cloud cloud-2"></div>
-            <div class="cloud cloud-3"></div>
         </div>
         <div class="hero-container">
             <div class="hero-content">
@@ -75,12 +69,10 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="https://images.pexels.com/photos/8613313/pexels-photo-8613313.jpeg"
+                    <img src="/gallery/outdoor1.png"
                         alt="Happy children learning">
                     <div class="image-overlay">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
+                      
                     </div>
                 </div>
                 <div class="about-content">
@@ -530,11 +522,32 @@
                         </iframe>
                     </div>
                 </div>
-                <div class="contact-cta">
-                    <a href="https://app.ikriyo.com/Link/Nurture-International-Fun-Skool_Thane@AUsenhhHjNstpriDn7OYfIvYBjsVt7OTegfAgra%2BXYc%3D" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-phone"></i>
-                        Call Now to Enroll
-                    </a>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10" required>
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="form-group radio-group">
+                            <label>Are you a:</label>
+                            <div class="radio-options">
+                                <label><input type="radio" name="role" value="parent" required> Parent</label>
+                                <label><input type="radio" name="role" value="teacher" required> Teacher</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="location" placeholder="Where are you from?" required>
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -596,6 +609,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919004425091" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="script.js"></script>
 </body>

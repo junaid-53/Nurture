@@ -447,3 +447,51 @@ Contact us:
 
 Design by: Starz Ventures
 `);
+
+// Contact form validation
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = contactForm.querySelector('input[name="name"]').value;
+            const phone = contactForm.querySelector('input[name="phone"]').value;
+            const role = contactForm.querySelector('input[name="role"]:checked');
+            const location = contactForm.querySelector('input[name="location"]').value;
+            
+            // Validate phone number (exactly 10 digits)
+            if (!/^\d{10}$/.test(phone)) {
+                alert('Please enter a valid 10-digit phone number');
+                return;
+            }
+            
+            // Check if all fields are filled
+            if (!name || !phone || !role || !location) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = contactForm.querySelector('.btn');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Thank you for your submission! We will contact you soon.');
+                contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+        
+        // Phone number input restriction (only numbers)
+        const phoneInput = contactForm.querySelector('input[name="phone"]');
+        phoneInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+    }
+});
