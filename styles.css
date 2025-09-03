@@ -1267,6 +1267,10 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .bg-image {
+        background-image: url('/bg2.png');
+    }
+    
     .hamburger {
         display: flex;
     }
