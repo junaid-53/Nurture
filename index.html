@@ -68,11 +68,26 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image">
-                    <img src="/gallery/outdoor1.png"
-                        alt="Happy children learning">
-                    <div class="image-overlay">
-                      
+                <div class="about-image-slider">
+                    <div class="slider-container">
+                        <div class="slider-track" id="aboutSliderTrack">
+                            <div class="slide"><img src="/gallery/facilities1.png" alt="School Facilities"></div>
+                            <div class="slide"><img src="/gallery/facilities2.png" alt="School Facilities"></div>
+                            <div class="slide"><img src="/gallery/facilities3.png" alt="School Facilities"></div>
+                            <div class="slide"><img src="/gallery/facilities4.png" alt="School Facilities"></div>
+                            <div class="slide"><img src="/gallery/facilities5.png" alt="School Facilities"></div>
+                            <div class="slide"><img src="/gallery/hobby1.png" alt="Hobby Activities"></div>
+                            <div class="slide"><img src="/gallery/hobby2.png" alt="Hobby Activities"></div>
+                            <div class="slide"><img src="/gallery/hobby3.png" alt="Hobby Activities"></div>
+                            <div class="slide"><img src="/gallery/hobby4.png" alt="Hobby Activities"></div>
+                            <div class="slide"><img src="/gallery/hobby5.png" alt="Hobby Activities"></div>
+                            <div class="slide"><img src="/gallery/outdoor1.png" alt="Outdoor Activities"></div>
+                            <div class="slide"><img src="/gallery/outdoor2.png" alt="Outdoor Activities"></div>
+                            <div class="slide"><img src="/gallery/outdoor3.png" alt="Outdoor Activities"></div>
+                            <div class="slide"><img src="/gallery/outdoor4.png" alt="Outdoor Activities"></div>
+                            <div class="slide"><img src="/gallery/outdoor5.png" alt="Outdoor Activities"></div>
+                            <div class="slide"><img src="/gallery/outdoor6.png" alt="Outdoor Activities"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="about-content">
@@ -144,6 +159,38 @@
                     // Show the selected tab pane
                     document.getElementById(tabId).classList.add('active');
                 });
+            });
+
+            // About section image slider
+            const sliderTrack = document.getElementById('aboutSliderTrack');
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                const translateX = -currentSlide * (100 / totalSlides);
+                sliderTrack.style.transform = `translateX(${translateX}%)`;
+            }
+
+            // Auto-slide every 3 seconds
+            setInterval(nextSlide, 3000);
+
+            // FAB Menu Toggle
+            const fabMain = document.getElementById('fabMain');
+            const fabMenu = document.getElementById('fabMenu');
+            
+            fabMain.addEventListener('click', function() {
+                fabMain.classList.toggle('active');
+                fabMenu.classList.toggle('active');
+            });
+
+            // Close FAB menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.fab-container')) {
+                    fabMain.classList.remove('active');
+                    fabMenu.classList.remove('active');
+                }
             });
         });
     </script>
@@ -485,73 +532,108 @@
     </section> -->
 
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get in Touch</h2>
-                <p>We'd love to welcome your family to our learning community</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Visit Us</h4>
-                            <p>Nurture International Fun Skool<br>Bhayander East, Mumbai</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Call Us</h4>
-                            <p>9768-619-804</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email Us</h4>
-                            <p>nifsbhayander@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="map-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.222715620261!2d72.85154177419058!3d19.316139644391875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7afd4ff183a35%3A0x11e9225a3cb60c76!2sNurture%20International%20Fun-Skool%20%7C%20Best%20Preschool%20in%20Bhayandar%20East!5e0!3m2!1sen!2sin!4v1755949013834!5m2!1sen!2sin"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10" required>
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="form-group radio-group">
-                            <label>Are you a:</label>
-                            <div class="radio-options">
-                                <label><input type="radio" name="role" value="parent" required> Parent</label>
-                                <label><input type="radio" name="role" value="teacher" required> Teacher</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="location" placeholder="Where are you from?" required>
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Submit
-                        </button>
-                    </form>
-                </div>
-            </div>
+<!-- Contact Section --> 
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Get in Touch</h2>
+      <p>We'd love to welcome your family to our learning community</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h4>Visit Us</h4>
+            <p>Nurture International Fun Skool<br>Bhayander East, Mumbai</p>
+          </div>
         </div>
-    </section>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h4>Call Us</h4>
+            <p>9768-619-804</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>Email Us</h4>
+            <p>nurtureinternationalfunskool@gmail.com</p>
+          </div>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.222715620261!2d72.85154177419058!3d19.316139644391875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7afd4ff183a35%3A0x11e9225a3cb60c76!2sNurture%20International%20Fun-Skool%20%7C%20Best%20Preschool%20in%20Bhayandar%20East!5e0!3m2!1sen!2sin!4v1755949013834!5m2!1sen!2sin"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Updated Contact Form -->
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="form-group">
+            <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10" required>
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="form-group radio-group">
+            <label>Are you a:</label>
+            <div class="radio-options">
+              <label><input type="radio" name="role" value="parent" required> Parent</label>
+              <label><input type="radio" name="role" value="teacher" required> Teacher</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" name="location" placeholder="Where are you from?" required>
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i>
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add this JS before closing </body> -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const formData = {
+    name: document.querySelector("input[name='name']").value,
+    phone: document.querySelector("input[name='phone']").value,
+    role: document.querySelector("input[name='role']:checked")?.value,
+    location: document.querySelector("input[name='location']").value,
+  };
+
+  try {
+    const response = await fetch("https://nurture-655518493333.asia-south1.run.app", {   // 🔴 replace with your deployed Google Cloud Function URL
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      alert("✅ Submitted successfully!");
+      document.getElementById("contactForm").reset();
+    } else {
+      alert("❌ Error: " + result.message);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("⚠️ Submission failed. Please try again.");
+  }
+});
+</script>
 
     <!-- Footer -->
     <footer class="footer">
@@ -559,13 +641,12 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="/nuture logo.webp" alt="Nurture International Fun Skool" class="logo-img">
+                        <img src="/nurture logo.png" alt="Nurture International Fun Skool" class="logo-img">
                     </div>
                     <p>Building Future-Ready Learners Through Play, Love & Purpose since 2008</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/nurtureinternationalfunskool" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/NIFS.NAC/" target="_blank"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -595,7 +676,7 @@
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-envelope"></i>
-                        <span>nifsbhayander@gmail.com</span>
+                        <span>nurtureinternationalfunskool@gmail.com</span>
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-map-marker-alt"></i>
@@ -610,10 +691,20 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919004425091" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Floating Action Button Menu -->
+    <div class="fab-container">
+        <div class="fab-menu" id="fabMenu">
+            <a href="tel:+919768619804" class="fab-option phone-fab" title="Call Us">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="https://wa.me/919768619804" class="fab-option whatsapp-fab" target="_blank" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <button class="fab-main" id="fabMain" title="Contact Us">
+            <i class="fas fa-comment"></i>
+        </button>
+    </div>
 
     <script src="script.js"></script>
 </body>

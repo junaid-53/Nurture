@@ -442,7 +442,7 @@ Since 2008 - Building Future-Ready Learners Through Play, Love & Purpose
 
 Contact us:
 📞 9768-619-804
-📧 nifsbhayander@gmail.com
+📧 nurtureinternationalfunskool@gmail.com
 📍 Bhayander East, Mumbai
 
 Design by: Starz Ventures
